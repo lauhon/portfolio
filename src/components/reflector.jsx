@@ -24,6 +24,7 @@ function createEvent(api, hit, intersect, intersects) {
   };
 }
 
+// eslint-disable-next-line react/display-name
 export const Reflect = forwardRef(
   (
     {
