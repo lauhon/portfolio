@@ -189,12 +189,17 @@ function Text({ onRayOver, onRayOut, onRayMove, ...props }) {
 
   const [hovered, hover] = useState(false);
 
+  const vw = Math.max(
+    document.documentElement.clientWidth || 0,
+    window.innerWidth || 0
+  );
+
+  const size = vw < 1500 ? 0.5 : 1;
+
   return (
     <group {...props}>
       <mesh onRayOver={onRayOver} onRayOut={onRayOut} onRayMove={onRayMove}>
-        <textGeometry
-          args={["Laurenz Honauer", { font, size: 1, height: 1 }]}
-        />
+        <textGeometry args={["Laurenz Honauer", { font, size, height: 1 }]} />
         <meshBasicMaterial color="#000" opacity={1} />
       </mesh>
     </group>
