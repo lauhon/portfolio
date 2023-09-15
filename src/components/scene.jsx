@@ -186,35 +186,12 @@ export function Triangle({ onRayOver, ...props }) {
 function Text({ onRayOver, onRayOut, onRayMove, ...props }) {
   const loader = new FontLoader();
   const font = loader.parse(roboto);
-  // const { nodes } = useLoader(
-  //   GLTFLoader,
-  //   "https://uploads.codesandbox.io/uploads/user/b3e56831-8b98-4fee-b941-0e27f39883ab/xxpI-prism.glb"
-  // );
 
   const [hovered, hover] = useState(false);
 
   return (
     <group {...props}>
-      {/* <mesh
-        visible={false}
-        scale={1.9}
-        rotation={[Math.PI / 2, Math.PI, 0]}
-        onRayOver={onRayOver}
-        onRayOut={onRayOut}
-        onRayMove={onRayMove}
-      >
-        <boxGeometry args={[1, 1, 1, 3, 1]} />
-      </mesh> */}
-
-      <mesh
-        // {...props}
-        onRayOver={onRayOver}
-        onRayOut={onRayOut}
-        onRayMove={onRayMove}
-        // onRayOver={(e) => hover(true)}
-        // onRayOut={(e) => hover(false)}
-        // onRayMove={(e) => null /*console.log(e.direction)*/}
-      >
+      <mesh onRayOver={onRayOver} onRayOut={onRayOut} onRayMove={onRayMove}>
         <textGeometry
           args={["Laurenz Honauer", { font, size: 1, height: 1 }]}
         />
